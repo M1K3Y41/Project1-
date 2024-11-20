@@ -1,0 +1,36 @@
+import urllib.request
+import json
+
+def fetch_global_crypto_stats():
+    """Fetch and display global cryptocurrency statistics from Coinlore API."""
+    try:
+        # API endpoint for global stats
+        url = "https://api.coinlore.net/api/global/"
+
+        # Send GET request using urllib
+        with urllib.request.urlopen(url) as response:
+            # Debugging: Check if the response is being fetched correctly
+            print("Response fetched successfully.")
+            data = json.load(response)  # Load JSON response
+
+        # Parse and display data
+        stats = data[0]
+        print("\n--- Global Cryptocurrency Statistics ---")
+        print(f"Total Coins: {stats['coins_count']}")
+        print(f"Active Markets: {stats['active_markets']}")
+        print(f"Total Market Cap: ${stats['total_mcap']:,.2f}")
+        print(f"Total Volume (24h): ${stats['total_volume']:,.2f}")
+        print(f"Bitcoin Dominance: {stats['btc_d']}%")
+        print(f"Ethereum Dominance: {stats['eth_d']}%")
+        print(f"Market Cap Change (24h): {stats['mcap_change']}%")
+        print(f"Volume Change (24h): {stats['volume_change']}%")
+        print(f"Average Price Change (24h): {stats['avg_change_percent']}%")
+        print(f"All-Time High Market Cap: ${stats['mcap_ath']:,.2f}")
+        print(f"All-Time High Volume: ${stats['volume_ath']:,.2f}")
+
+    except Exception as e:
+        # If error occurs, print the error
+        print(f"Error fetching data: {e}")
+
+# Run the function
+fetch_global_crypto_stats()
