@@ -30,12 +30,8 @@ The data is fetched using the Coinlore API and displayed in a readable format.
 
 1. Ensure you have Python installed. You can download it [here](https://www.python.org/).
 2. Copy the script and save it as `crypto_stats.py` using any text editor (e.g., Notepad).
-3. Run the script:
-   - Open the script in Python 3.13 IDLE and select `Run Module`.
-   - Alternatively, execute the script from the terminal:
-     ```bash
-     python crypto_stats.py
-     ```
+3. Run the script: Open the script in Python 3.13 IDLE and select `Run Module`.
+
 
 ---
 
